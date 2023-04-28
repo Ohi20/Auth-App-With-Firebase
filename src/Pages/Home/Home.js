@@ -4,6 +4,7 @@ import Categories from './Categories';
 import Drawer from './Drawer';
 import Homebanner from './Homebanner';
 import Stats from './Stats';
+import Artboard from '../../Shared/Artboard';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Categories/>
             <Stats/>
             <Drawer/>
+            <Artboard/>
             <Footer/>
         </div>
     );

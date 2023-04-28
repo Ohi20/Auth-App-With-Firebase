@@ -1,0 +1,14 @@
+.canvas {
+    position: relative;
+    width: 560px;
+    height: 360px;
+    border: 1px solid black;
+  }
+
+  .test {
+    position: absolute;
+    border-radius: 9999px;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+  }
