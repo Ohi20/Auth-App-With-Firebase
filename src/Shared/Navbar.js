@@ -36,7 +36,7 @@ setInterval(() => {
             <label tabindex="0" class="btn btn-ghost lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
-            <ul tabindex="0" className="menu menu-compact text-white dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box font-bold w-52">
+            <ul tabindex="0" className="menu menu-compact text-black dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box font-bold w-52">
               <li><Link to="/">Home</Link></li>
               <li tabindex="0">
                 <Link className="justify-between" to="/categories">
@@ -97,7 +97,7 @@ setInterval(() => {
         </div>
         
         
-  <div className='navbar-end'>
+  <div className='navbar-end invisible lg:visible'>
     <h2>Offer Ends In :</h2>
   <span  class="countdown font-mono text-2xl">
   <span style={{'--value':'10'}}></span>h
