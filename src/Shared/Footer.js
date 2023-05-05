@@ -18,7 +18,7 @@ const Footer = () => {
     </div>
   </div> 
   <div>
-    <p className='font-bold'>Copyright © 2022 - All right reserved by Minimal</p>
+    <p className='font-bold'>Copyright © 2023 - All right reserved by BulkArt</p>
   </div>
 </footer>
         </div>

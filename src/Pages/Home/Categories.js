@@ -7,7 +7,7 @@ const Categories = () => {
             <div className='text-center text-xl font-bold'>
                 <h2>Top Categories</h2>
             </div>
-            <div className='my-10 grid lg:grid-cols-3 sm:grid-cols-1 gap-4'>
+            <div className='my-10 grid grid-cols-1 lg:grid-cols-3 gap-4'>
             <div class="card w-96 h-100 bg-base-100 shadow-xl image-full">
   <figure><img className='w-96 h-100' src="https://i.pinimg.com/originals/c5/60/9b/c5609b3b87be13f55fd90d3967c180b4.jpg" alt="Shoes" /></figure>
   <div class="card-body">

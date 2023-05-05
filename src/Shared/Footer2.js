@@ -5,7 +5,7 @@ const Footer2 = () => {
         <div>
             <footer class="footer footer-center p-4 text-xl text-base-content">
   <div>
-    <p>Copyright © 2022 - All right reserved by Minimal</p>
+    <p>Copyright © 2023 - All right reserved by BulkArt</p>
   </div>
 </footer>
         </div>
