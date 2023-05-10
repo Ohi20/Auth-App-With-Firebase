@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Footer2 from '../../Shared/Footer2';
+import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 
 
 const Login = () => {
@@ -14,6 +15,8 @@ const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const [SignInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+
+    const provider = new FacebookAuthProvider();
 
     let signInError;
     const navigate = useNavigate();
@@ -35,6 +38,11 @@ const Login = () => {
     const onSubmit = data => {
         console.log(data);
         SignInWithEmailAndPassword(data.email,data.password);
+        
+    }
+
+    const loginFacebook = () => {
+      signInWithPopup(provider,auth);
     }
 
 
@@ -46,10 +54,7 @@ const Login = () => {
          
       }}>
       <div class="hero-content flex-col lg:flex-row-reverse">
-        <div class="text-center text-white bg-black p-4 rounded-md lg:text-left">
-          <h1 class="text-5xl font-bold">Login now!</h1>
-          <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        </div>
+     
         <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 
           <form onSubmit={handleSubmit(onSubmit)} class="card-body">
@@ -114,6 +119,10 @@ class="input input-bordered w-full max-w-xs"
 <div class="divider">OR</div>
 <button onClick={() => signInWithGoogle()} 
 className='btn btn-outline'>Continue with Google</button>
+<button onClick={loginFacebook}
+className='btn btn-outline'>Continue with Facebook</button>
+<button 
+className='btn btn-outline'>Continue with Github</button>
               
               
             

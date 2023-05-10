@@ -2,21 +2,25 @@ import React from 'react';
 
 const Homebanner = () => {
     return (
-        <div className='px-10'>
-            <div className="hero lg:min-h-screen rounded-xl" style={{ 
-      backgroundImage: `url("https://images.unsplash.com/flagged/photo-1572392640988-ba48d1a74457?ixlib=rb-1.2.1&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb")`
-       
-    }}>
-  <div class="hero-overlay bg-opacity-30"></div>
-  <div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md">
-      <h1 class="mb-5 lg:text-4xl sm:text-2xl font-bold text-white">Hello there</h1>
-      <p class="mb-5 lg:text-2xl sm:text-xl">Welcome to Possibilitarian World</p>
-      <button class="btn btn-primary ">Get Started</button>
-    </div>
-  </div>
-</div>
+      <section>
+      <div className='container'>
+        <div className="hero h-96 md:h-[500px] rounded-box overflow-hidden" style={{ backgroundImage: `url("https://placeimg.com/1000/800/tech")` }}>
+          <div className="hero-overlay bg-opacity-60 bg-secondary"></div>
+          <div className="hero-content text-center text-secondary-content">
+            <div className="max-w-lg">
+              <h1 className="mb-5 sm:mb-7 text-4xl sm:text-5xl font-bold">
+                Let's make your
+                product a success
+              </h1>
+              <p className="mb-5 sm:mb-7 sm:text-lg">
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
+              </p>
+              <button className="btn btn-warning sm:btn-wide">Get Started</button>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
     );
 };
 

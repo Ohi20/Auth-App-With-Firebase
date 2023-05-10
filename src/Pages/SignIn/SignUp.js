@@ -1,6 +1,6 @@
 import React from 'react';
 import Loading from '../../Shared/Loading';
-import { useSignInWithEmailAndPassword,useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {  useCreateUserWithEmailAndPassword,useSignInWithGoogle,useUpdateProfile } from "react-firebase-hooks/auth";
 import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -12,18 +12,20 @@ const SignUp = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const [SignInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    if(loading || gLoading){
+    if(loading || gLoading || updating){
         return <Loading></Loading>
     }
 
-    if(error || gError){
+    if(error || gError || updateError){
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
@@ -31,9 +33,10 @@ const SignUp = () => {
         navigate(from, {replace: true});
     }
 
-    const onSubmit = data => {
+    const onSubmit = async data => {
         console.log(data);
-        SignInWithEmailAndPassword(data.email,data.password);
+        await createUserWithEmailAndPassword(data.email,data.password);
+        await updateProfile({displayName: data.name});
     }
 
 
@@ -45,10 +48,6 @@ const SignUp = () => {
          
       }}>
       <div class="hero-content flex-col lg:flex-row-reverse">
-        <div class="text-center bg-black p-4 rounded-md text-white lg:text-left">
-          <h1 class="text-5xl font-bold">SignUp now!</h1>
-          <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        </div>
         <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 
           <form onSubmit={handleSubmit(onSubmit)} class="card-body">
@@ -137,7 +136,10 @@ class="input input-bordered w-full max-w-xs"
 <div class="divider">OR</div>
 <button onClick={() => signInWithGoogle()} 
 className='btn btn-outline'>Continue with Google</button>
-              
+<button 
+className='btn btn-outline'>Continue with Facebook</button>
+<button 
+className='btn btn-outline'>Continue with Github</button>              
               
             
             

@@ -1,114 +1,80 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import van from "../Assets/images/van.jpg";
 import logo1 from "../Assets/images/logo1.png";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
 import { signOut } from 'firebase/auth';
 
+const THEMES = ["light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"];
+
 const Navbar = () => {
 
   const [user, loading, error] = useAuthState(auth);
+
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
+  const handleThemeChange = (e) => {
+    const val = e.target.getAttribute('data-set-theme');
+    setTheme(val)
+  }
+
+  // const userName = user.displayName;
+
 
   const logout = () => {
     signOut(auth);
   }
 
-  let secondCounter = 60;
-  let minuteCounter = 0;
-  let hourCounter = 0;
-
-setInterval(() => {
-		if(secondCounter>0){
-			secondCounter--
-		}
-    if(secondCounter===0){
-      minuteCounter = minuteCounter -1; 
-    }
-  document.getElementById('counterElement').style.setProperty('--value', secondCounter)
-}, 1000);
 
 
-    return (
-        <div class="navbar mt-6 bg-zinc-100">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <label tabindex="0" class="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-            </label>
-            <ul tabindex="0" className="menu menu-compact text-black dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box font-bold w-52">
-              <li><Link to="/">Home</Link></li>
-              <li tabindex="0">
-                <Link className="justify-between" to="/categories">
-                  Categories
-                  <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
-                </Link>
-                <ul class="p-2 bg-white">
-                  <li><Link to="/purchase">Purchase</Link></li>
-                  <li><Link to="/review">Review</Link></li>
-                </ul>
-              </li>
-              <li tabindex="0">
-                <Link className="justify-between" to="/blogs">
-                  Docs
-                  <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
-                </Link>
-                <ul class="p-2 bg-white">
-                  <li><Link to="/blogs">Blogs</Link></li>
-                  <li><Link to="/about">About Us</Link></li>
-                </ul>
-              </li>
-              <li>{user ?  <button onClick={logout} className="btn btn-error text-white">Sign Out</button> : <Link to="/login">Login</Link>}</li>
+  return (
+    <header className='bg-base-100 py-2 sticky top-0 z-50'>
+      <div className='container'>
+        <div className="navbar px-0">
+          <div className="navbar-start">
+            <div className="dropdown">
+              <label tabIndex={0} className="btn btn-circle btn-primary lg:hidden mr-1">
+                <i className='bi bi-list text-2xl'></i>
+              </label>
+              <ul tabIndex={0} className="dropdown-content mt-1 w-52 menu menu-compact p-2 bg-base-200 shadow rounded-box">
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/purchase'>Purchase</Link></li>
+                <li><Link to='/review'>Review</Link></li>
+                <li><Link to='/blogs'>Blogs</Link></li>
+                <li>{user ? <button onClick={logout} className="btn btn-error text-white">Sign Out</button> : <Link to="/login">Login</Link>}</li>
+              </ul>
+            </div>
+            <a className="btn btn-ghost normal-case text-2xl">daisyUI</a>
+          </div>
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal p-0 font-medium">
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/purchase'>Purchase</Link></li>
+              <li><Link to='/review'>Review</Link></li>
+              <li><Link to='/blogs'>Blogs</Link></li>
+              <li>{user ? <button onClick={logout} className="btn btn-error text-white">Sign Out</button> : <Link to="/login">Login</Link>}</li>
             </ul>
           </div>
-          <div className="normal-case flex">
-            <div>
-            <img className='w-4/5' src={logo1} alt='logo'/>
-            
+          <div className="navbar-end">
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn">
+                {THEMES.length} Themes
+              </label>
+              <ul tabIndex={0} className="dropdown-content mt-1 w-52 max-h-96 overflow-y-auto menu menu-compact p-2  bg-base-200 shadow rounded-box">
+                {
+                  THEMES.map((theme, i) => <li key={theme + i}><button data-set-theme={theme} onClick={handleThemeChange} className="font-medium capitalize">{i + 1 + '. ' + theme}</button></li>)
+                }
+              </ul>
             </div>
           </div>
         </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal font-bold text-xl p-0">
-          <li><Link to="/">Home</Link></li>
-            <li tabindex="0">
-              <a>
-                Categories
-                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-              </a>
-              <ul class="p-2 bg-white">
-                <li><Link to="/purchase">Purchase</Link></li>
-                <li><Link to="/review">Review</Link></li>
-                <li><Link to="/gallery">Gallery</Link></li>
-              </ul>
-            </li>
-            <li tabindex="0">
-              <a>
-                Docs
-                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-              </a>
-              <ul class="p-2 bg-white">
-                <li><Link to="/blogs">Blogs</Link></li>
-                <li><Link to="/about">About Us</Link></li>
-              </ul>
-            </li>
-            <li>{user ?  <button onClick={logout} className="btn btn-error text-white">Sign Out</button> : <Link to="/login">Login</Link>}</li>
-          </ul>
-        </div>
-        
-        
-  <div className='navbar-end invisible lg:visible'>
-    <h2>Offer Ends In :</h2>
-  <span  class="countdown font-mono text-2xl">
-  <span style={{'--value':'10'}}></span>h
-  <span style={{'--value':'24'}}></span>m
-  <span id='counterElement' style={{'--value':'60'}}></span>s
-</span>
-  </div>
-</div>
-        
-      
-    );
+      </div>
+    </header>
+  );
 };
 
 export default Navbar;

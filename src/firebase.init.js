@@ -6,12 +6,12 @@ import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDBtlnYry4wR48pWqtXqaYTT3s-yJL63zU",
-  authDomain: "painter-auth.firebaseapp.com",
-  projectId: "painter-auth",
-  storageBucket: "painter-auth.appspot.com",
-  messagingSenderId: "139473338985",
-  appId: "1:139473338985:web:6c4e1fe9e26ec01aaed8f8"
+  apiKey: "AIzaSyBe2E0OYIe5aRrx_ms86BPmNHDObABNEDo",
+  authDomain: "painter-auth-assignment-10.firebaseapp.com",
+  projectId: "painter-auth-assignment-10",
+  storageBucket: "painter-auth-assignment-10.appspot.com",
+  messagingSenderId: "103086054129",
+  appId: "1:103086054129:web:a26d86226d21a8d7942750"
 };
 
 // Initialize Firebase

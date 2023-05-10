@@ -6,6 +6,7 @@ import Homebanner from './Homebanner';
 import Stats from './Stats';
 import Artboard from '../../Shared/Artboard';
 import SolarSystem from '../../Shared/SolarSystem';
+import Testimonial from '../../Shared/Testimonial';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Categories/>
             <Stats/>
             <Drawer/>
+            <Testimonial/>
             <Artboard/>
             <Footer/>
             <SolarSystem/>
