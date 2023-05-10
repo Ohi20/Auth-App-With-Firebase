@@ -7,7 +7,7 @@ const Categories = () => {
         <div className='text-center'>
           <h2 className='text-3xl sm:text-5xl font-bold mb-4'>What We Do</h2>
           <p className='text-lg sm:text-2xl mb-6 md:mb-14'>
-            Save time managing advertising & Content for your business.
+          THE EXHIBITION IS DEDICATED TO AN ARTIST WHO WAS SIMULTANEOUSLY SUCCESSFUL AND INTERESTING IN SEVERAL GUISES
           </p>
         </div>
 
@@ -15,9 +15,9 @@ const Categories = () => {
           <div className="card bg-base-200 transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
             <div className="card-body items-center text-center gap-4">
               <i className='bi bi-search text-4xl'></i>
-              <h2 className="card-title">SEO Services</h2>
+              <h2 className="card-title">Action Painting</h2>
               <p>
-                This is a wider card with <br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
+              Action painting, sometimes called "gestural abstraction", is a style of painting in which paint is spontaneously dribbled, splashed or smeared onto the canvas. <br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
               </p>
             </div>
           </div>
@@ -25,9 +25,9 @@ const Categories = () => {
           <div className="card bg-base-200 transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
             <div className="card-body items-center text-center gap-4">
               <i className='bi bi-chat-left-dots text-4xl'></i>
-              <h2 className="card-title">Social Content</h2>
+              <h2 className="card-title">Oil Painting</h2>
               <p>
-                This is a wider card with <br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
+              Oil painting is the process of painting with pigments with a medium of drying oil as the binder.<br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
               </p>
             </div>
           </div>
@@ -35,9 +35,9 @@ const Categories = () => {
           <div className="card bg-base-200 transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
             <div className="card-body items-center text-center gap-4">
               <i className='bi bi-badge-ad text-4xl'></i>
-              <h2 className="card-title">Creative ads</h2>
+              <h2 className="card-title">Impressionism</h2>
               <p>
-                This is a wider card with <br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
+              Impressionism was a 19th-century art movement characterized by relatively small, thin, yet visible brush strokes, open composition.<br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
               </p>
             </div>
           </div>
@@ -45,9 +45,9 @@ const Categories = () => {
           <div className="card bg-base-200 transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
             <div className="card-body items-center text-center gap-4">
               <i className='bi bi-card-checklist text-4xl'></i>
-              <h2 className="card-title">Brand Identity</h2>
+              <h2 className="card-title">Portrait Painting</h2>
               <p>
-                This is a wider card with <br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
+              Portrait Painting is a genre in painting, where the intent is to represent a specific human subject.<br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
               </p>
             </div>
           </div>
@@ -55,9 +55,9 @@ const Categories = () => {
           <div className="card bg-base-200 transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
             <div className="card-body items-center text-center gap-4">
               <i className='bi bi-wallet2 text-4xl'></i>
-              <h2 className="card-title">Budget & Marketing</h2>
+              <h2 className="card-title">Fine Art</h2>
               <p>
-                This is a wider card with <br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
+              In European academic traditions, fine art is made primarily for aesthetics or creative expression.<br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
               </p>
             </div>
           </div>
@@ -65,9 +65,9 @@ const Categories = () => {
           <div className="card bg-base-200 transform-gpu transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
             <div className="card-body items-center text-center gap-4">
               <i className='bi bi-funnel text-4xl'></i>
-              <h2 className="card-title">Optimize conversions</h2>
+              <h2 className="card-title">Pastel</h2>
               <p>
-                This is a wider card with <br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
+              A pastel is an art medium in a variety of forms including a stick, a square, a pebble, or a pan of color.<br className='hidden xl:inline' />supporting text below as a <br className='hidden xl:inline' /> natural content.
               </p>
             </div>
           </div>
