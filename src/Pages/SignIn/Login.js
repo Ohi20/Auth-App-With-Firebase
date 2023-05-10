@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
+import Footer from '../../Shared/Footer';
 
 
 const Login = () => {
@@ -45,11 +46,8 @@ const Login = () => {
   }
 
   return (
-    <div className='px-12 my-5'>
-      <div class="hero lg:min-h-screen rounded" style={{
-        backgroundImage: `url("https://wallpaperaccess.com/full/181622.jpg")`
-
-      }}>
+    <div className='my-5'>
+      <div class="hero lg:min-h-screen rounded">
         <div class="hero-content flex-col lg:flex-row-reverse">
 
           <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -111,19 +109,18 @@ const Login = () => {
               </div>
               {signInError}
 
-              <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
-              <p className='lg:text-xl'>New to Painting? <Link className='text-primary' to="/signup"><br></br>Create New Account</Link></p>
+              <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="Login" />
+              <p className=''>New to BulkArt? <Link className='text-primary' to="/signup"><br></br>Create New Account</Link></p>
               <div class="divider">OR</div>
               <button onClick={() => signInWithGoogle()}
                 className='btn btn-outline'>Continue with Google</button>
               <button onClick={loginFacebook}
                 className='btn btn-outline'>Continue with Facebook</button>
-              <button
-                className='btn btn-outline'>Continue with Github</button>
             </form>
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
 
   );
