@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import auth from '../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import Footer from '../../Shared/Footer';
 
 const SignUp = () => {
 
@@ -41,14 +42,11 @@ const SignUp = () => {
 
 
   return (
-    <div className='px-12'>
-      <div class="hero lg:min-h-screen rounded" style={{
-        backgroundImage: `url("https://wallpaperaccess.com/full/2997.jpg")`
-
-      }}>
+    <div className='my-5'>
+      <div class="hero lg:min-h-screen rounded">
         <div class="hero-content flex-col lg:flex-row-reverse">
           <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-
+          <h2 className='my-4 text-xl text-center text-uppercase font-bold'>SignUp</h2>
             <form onSubmit={handleSubmit(onSubmit)} class="card-body">
 
               <div class="form-control">
@@ -130,26 +128,18 @@ const SignUp = () => {
               </div>
               {signInError}
 
-              <input className='btn w-full max-w-xs text-white' type="submit" value="Signup" />
-              <p className='lg:text-xl'>Already have an account? <Link className='text-primary' to="/login">Log In</Link></p>
+              <input className='btn btn-primary w-full max-w-xs text-white' type="submit" value="Signup" />
+              <p>Already have an account? <Link className='text-primary' to="/login">Log In</Link></p>
               <div class="divider">OR</div>
               <button onClick={() => signInWithGoogle()}
                 className='btn btn-outline'>Continue with Google</button>
               <button
                 className='btn btn-outline'>Continue with Facebook</button>
-              <button
-                className='btn btn-outline'>Continue with Github</button>
-
-
-
             </form>
-
           </div>
         </div>
       </div>
-
-
-
+      <Footer />
     </div>
   );
 };
