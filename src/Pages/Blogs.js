@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Shared/Footer';
 
 const Blogs = () => {
     return (
@@ -82,6 +83,7 @@ Painting also produces a relaxing, open environment where artists feel safe to e
     <p>When you paint, you’re stimulating the parts of your brain responsible for concentration and memory. For people with ADHD, which includes symptoms like struggling with focus, art therapy can help them stay more engaged. To boost your brain’s ability to focus, try painting with as few distractions as possible. If you’re studying a painting, focus your brain by looking for focal points, interesting compositions, color patterns, and more.</p>
   </div>
 </div>
+      <Footer/>
         </div>
     );
 };

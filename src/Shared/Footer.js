@@ -7,25 +7,18 @@ const Footer = () => {
       <div className='container '>
         <div className="footer py-10 md:py-16 grid-cols-2 sm:grid-cols-4 lg:grid-cols-auto">
           <div>
-            <span className="footer-title">Solutions</span>
-            <a href="#!" className="link link-hover">Marketing</a>
-            <a href="#!" className="link link-hover">Analytics</a>
-            <a href="#!" className="link link-hover">Commerce</a>
-            <a href="#!" className="link link-hover">Insights</a>
+            <span className="footer-title">Pages</span>
+            <a href="/" className="link link-hover">Home</a>
+            <a href="/purchase" className="link link-hover">Purchase</a>
+            <a href="/review" className="link link-hover">Review</a>
+            <a href="/login" className="link link-hover">Login</a>
           </div>
           <div>
             <span className="footer-title">Services</span>
-            <a href="#!" className="link link-hover">Branding</a>
-            <a href="#!" className="link link-hover">Design</a>
-            <a href="#!" className="link link-hover">Marketing</a>
-            <a href="#!" className="link link-hover">Advertisement</a>
-          </div>
-          <div>
-            <span className="footer-title">Company</span>
-            <a href="#!" className="link link-hover">About us</a>
-            <a href="#!" className="link link-hover">Contact</a>
-            <a href="#!" className="link link-hover">Jobs</a>
-            <a href="#!" className="link link-hover">Press kit</a>
+            <a href="#!" className="link link-hover">Action Painting</a>
+            <a href="#!" className="link link-hover">Oil Painting</a>
+            <a href="#!" className="link link-hover">Fine Art</a>
+            <a href="#!" className="link link-hover">Pastel</a>
           </div>
           <div>
             <span className="footer-title">Legal</span>
@@ -48,8 +41,8 @@ const Footer = () => {
         </div>
 
         <div className='flex flex-col sm:flex-row items-center border-t border-base-300 py-4 gap-2'>
-          <div className="flex-grow text-center sm:text-start">
-            <p>© 2022 Company, Inc. All rights reserved.</p>
+          <div className="flex-grow sm:text-start">
+            <p className='text-center'>© 2023 BulkArt All rights reserved.</p>
           </div>
           <div className="grid grid-flow-col gap-4">
             <a className='link link-secondary' href='#!'><i className='bi bi-facebook text-xl'></i></a>
